@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>  
+    <section class="cabecalho">
+    <header> 
+      <figure>
+        <a href="index.html">
+        <img src="midias/logo.png" width="100px">
+        </a>
+      </figure> 
+      <div class="barra-pesquisa">
+          <form action="buscar.html" method="GET">
+            <input type="text" name="q" placeholder="Buscar produtos...">
+              <button type="submit">🔍</button>
+          </form>
+        </div>
+        <h1>Loja Camisa 10</h1>
+        <div class="carrinho1">
+          <a href="carrinho.html">
+            <img src="midias/carrinho.png" alt="Carrinho" width="30">
+            <span class="contador" id="contadorCarrinho">0</span>
+          </a>
+        </div>
+    </header>
+    </section>
+
+  <div class="cadastro-container">
+    <h1 class="cadastro-titulo">Crie sua conta</h1>
+    <p class="cadastro-beneficio">
+      Ganhe <strong>10% de desconto</strong> na primeira compra, <strong>frete grátis</strong> e muito mais!
+    </p>
+
+    <form class="cadastro-form" action="form" method="post">
+      <div class="form-grupo">
+        <label class="form-label" for="nome">Nome completo:</label>
+        <input class="form-input" type="text" id="nome" name="nome" required>
+      </div>
+
+      <div class="form-grupo">
+        <label class="form-label" for="email">E-mail:</label>
+        <input class="form-input" type="email" id="email" name="email" required>
+      </div>
+
+      <div class="form-grupo">
+        <label class="form-label" for="senha">Senha:</label>
+        <input class="form-input" type="password" id="senha" name="senha" required>
+      </div>
+
+      <div class="form-grupo">
+        <label class="form-label" for="confirmar">Confirmar senha:</label>
+        <input class="form-input" type="password" id="confirmar" name="confirmar" required>
+      </div>
+      <button type="submit" class="form-botao">Cadastrar</button>
+
+    </form>
+
+<div id="emailConfirm" class="email-confirm">
+  <div class="email-header">
+    <img src="midias/561127.png" alt="Ícone email" />
+    <span>Loja Camisa 10 &lt;no-reply@lojacamisa10.com&gt;</span>
+  </div>
+  <div class="email-subject">Confirmação de Cadastro</div>
+  <div class="email-body">
+    Olá, <strong id="emailNome"></strong>!<br>
+    Seu cadastro foi realizado com sucesso.<br>
+    Confira seu e-mail para ativar sua conta.
+  </div>
+</div>
+
+
+    <p class="cadastro-login">
+      Já tem uma conta? <a class="cadastro-link" href="login.html">Entrar</a>
+    </p>
+  </div>
+
+        <section class="contatos">
+          <div class="contatos-container">
+              <div class="contato">
+                <img src="midias/Frete.png" width="50px" alt="frete">
+                <h3>Frete grátis</h3>
+                <p>Possuímos entrega grátis e rápida com código de rastreio.</p>
+              </div>
+
+              <div class="contato">
+                <img src="midias/suporte.png" width="50px" alt="suporte">
+                <h3>Suporte ao cliente</h3>
+                <p>Nosso suporte é rápido e 100% humanizado via Whatsapp!</p>
+              </div>
+
+              <div class="contato">
+                <img src="midias/Satisfaçao.png" width="50px" alt="Satisfaçao">
+                <h3>Satisfação ou reembolso</h3>
+                <p>Caso ocorra algo, devolvemos seu dinheiro ou reenviamos o produto.</p>
+              </div>
+
+              <div class="contato">
+                <img src="midias/cartao.png" width="50px" alt="pagamento">
+                <h3>Pagamento facilitado</h3>
+                <p>Parcelamos em até 12x no cartão sem juros.</p>
+              </div>
+          </div>
+        </section>
+
+        <footer id="Contato">
+          <section class="pagamento">
+            <h3>Formas de Pagamento</h3>
+            <div class="meiospagamento">
+              <img src="midias/visa.png">
+              <img src="midias/Mastercard.png">
+              <img src="midias/pix.webp">
+              <img src="midias/boleto.png">
+            </div>
+          </section>
+          
+          <div class="botao-faq-footer">
+                <a href="page_FAQ.html">❓ Dúvidas Frequentes (FAQ)</a>
+          </div>
+
+          <article>
+            <p><b>LOJACAMISA10</b><br> 
+              <br>
+              Desde 2025 atendendo todo o Brasil com confiança e produtos de qualidade.<br>
+              <br>
+              Endereço: Rua Visc. de Taunay, Bairro Centro, Joinville - SC CEP 89201-908</p>
+          </article>
+        </footer>
+
+         <a href="https://wa.me/5547984166284" class="whatsapp-fixo" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+    <img src="midias/whatsapp.png" alt="WhatsApp" />
+  </a>
+
+  <script src="busca.js"></script>
+  <script src="att_carrinho.js"></script>
+
+  <script>
+document.querySelector('.cadastro-form').addEventListener('submit', function(event) {
+  event.preventDefault();  
+
+  const nome = document.getElementById('nome').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const senha = document.getElementById('senha').value.trim();
+  const confirmar = document.getElementById('confirmar').value.trim();
+
+  if (!nome || !email || !senha || !confirmar) {
+    alert('Por favor, preencha todos os campos.');
+    return;
+  }
+
+  if (senha !== confirmar) {
+    alert('As senhas não coincidem.');
+    return;
+  }
+
+  const usuarios = JSON.parse(localStorage.getItem('usuarios')) || [];
+  usuarios.push({ nome, email, senha });
+  localStorage.setItem('usuarios', JSON.stringify(usuarios));
+
+  mostrarConfirmacaoEmail(nome);
+});
+
+function mostrarConfirmacaoEmail(nome) {
+  const emailConfirm = document.getElementById('emailConfirm');
+  const nomeSpan = document.getElementById('emailNome');
+
+  nomeSpan.textContent = nome;
+  emailConfirm.classList.add('show');
+
+  setTimeout(() => {
+    emailConfirm.classList.remove('show');
+    window.location.href = 'login.html';
+  }, 5000);
+}
+
+</script>
+
+
+  
+        
+</body>
+</html>

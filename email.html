@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cadastro com Confirmação</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 40px;
+      background: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .container {
+      background: white;
+      padding: 30px 40px;
+      border-radius: 8px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 320px;
+      text-align: center;
+      position: relative;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 18px;
+      border: 1.5px solid #ccc;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="password"]:focus {
+      border-color: #007BFF;
+      outline: none;
+    }
+
+    button {
+      background-color: #007BFF;
+      border: none;
+      padding: 12px;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Mensagem de confirmação */
+    .confirmation {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #d4edda;
+      color: #155724;
+      padding: 20px 30px;
+      border-radius: 8px;
+      border: 1.5px solid #c3e6cb;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.4s ease-in-out;
+      font-weight: 600;
+    }
+
+    .confirmation.show {
+      opacity: 1;
+      pointer-events: auto;
+      animation: popIn 0.4s ease forwards;
+    }
+
+    @keyframes popIn {
+      0% {
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+      }
+      100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Cadastro</h2>
+    <form id="formCadastro">
+      <input type="text" id="nome" placeholder="Nome completo" required />
+      <input type="email" id="email" placeholder="E-mail" required />
+      <input type="password" id="senha" placeholder="Senha" required minlength="6" />
+      <button type="submit">Cadastrar</button>
+    </form>
+
+    <div class="confirmation" id="confirmationMsg">
+      Cadastro realizado com sucesso! 🎉
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('formCadastro');
+    const confirmation = document.getElementById('confirmationMsg');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); // impede o reload da página
+
+      // Aqui poderia ter validação extra, enviar dados para backend etc
+
+      // Mostrar mensagem de confirmação
+      confirmation.classList.add('show');
+
+      // Opcional: Limpar o formulário
+      form.reset();
+
+      // Esconder a mensagem após 3 segundos
+      setTimeout(() => {
+        confirmation.classList.remove('show');
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
+

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+  <a href="https://wa.me/5547984166284" class="whatsapp-fixo" target="_blank" aria-label="Fale conosco pelo WhatsApp">
+    <img src="midias/whatsapp.png" alt="WhatsApp" />
+  </a>
+  
+<body>
+  <header> 
+      <figure>
+        <a href="index.html">
+        <img src="midias/logo.png" width="100px">
+        </a>
+      </figure> 
+      <div class="barra-pesquisa">
+          <form action="buscar.html" method="GET">
+            <input type="text" name="q" placeholder="Buscar produtos...">
+              <button type="submit">🔍</button>
+          </form>
+        </div>
+        <h1>Loja Camisa 10</h1>
+        <div class="carrinho1">
+          <a href="carrinho.html">
+            <img src="midias/carrinho.png" alt="Carrinho" width="30">
+            <span class="contador" id="contadorCarrinho">0</span>
+          </a>
+        </div>
+    </header>
+
+  <div class="container_arg">
+  <div class="galeria">
+    <input type="radio" name="galeria" id="img1" checked>
+    <input type="radio" name="galeria" id="img2">
+    <input type="radio" name="galeria" id="img3">
+
+    <div class="galeria-imagens">
+      <img id="imagem1" src="midias/Bone1.avif" alt="Imagem 1">
+      <img id="imagem2" src="midias/Bone2.avif" alt="Imagem 2">
+    </div>
+  
+    <div class="miniaturas">
+      <label for="img1"><img src="midias/Bone1.avif" alt="Mini 1"></label>
+      <label for="img2"><img src="midias/Bone2.avif" alt="Mini 2"></label>
+    </div>
+  </div>
+
+  <div class="info_prod">
+    <h1>
+      Boné Nike Club
+Futura
+    </h1>
+    <p>R$169.90 <s>$189.99</s></p>
+    <article>
+      Um boné clássico de profundidade média com muitas opções de estilo, este Boné Nike Club vem em sarja de algodão suave que tem uma lavagem macia para fácil conforto desde o primeiro dia. A aba pré-curvada se presta a um estilo casual, e a alça traseira ajustável permite que você encontre o ajuste certo.
+    </article>
+    <p>Tamanho:</p>
+    <div class="tamanhos">
+        <input type="radio" name="tamanho" id="tam-p" hidden checked>
+        <label for="tam-p" class="btn_camisa">Único</label>
+    </div>
+    
+    <div class="quantidade">
+        <label for="quantidade">Quantidade:</label>
+  <input type="number" id="quantidade" name="quantidade" min="1" max="100" value="1">
+    </div>
+    <button id="adicionarCarrinho">Adicionar ao Carrinho</button>
+  </div>
+</div>
+
+<section class="avaliacoes-produto">
+  <h2>Avaliações dos Clientes</h2>
+
+  <div class="avaliacao">
+    <p class="estrela">⭐⭐⭐⭐⭐</p>
+    <p><strong>José</strong> — "Qualidade absurda no boné."</p>
+  </div>
+  
+</section>
+
+
+
+<footer id="Contato">
+          <section class="pagamento">
+            <h3>Formas de Pagamento</h3>
+            <div class="meiospagamento">
+              <img src="midias/visa.png">
+              <img src="midias/Mastercard.png">
+              <img src="midias/pix.webp">
+              <img src="midias/boleto.png">
+            </div>
+          </section>
+          
+          <div class="botao-faq-footer">
+                <a href="page_FAQ.html">❓ Dúvidas Frequentes (FAQ)</a>
+          </div>
+
+          <article>
+            <p><b>LOJACAMISA10</b><br> 
+              <br>
+              Desde 2025 atendendo todo o Brasil com confiança e produtos de qualidade.<br>
+              <br>
+              Endereço: Rua Visc. de Taunay, Bairro Centro, Joinville - SC CEP 89201-908</p>
+          </article>
+        </footer>
+
+          <script src="busca.js"></script>
+          <script src="add_carrinho.js"></script>
+          <script src="att_carrinho.js"></script>
+          <script src="logado.js"></script>
+
+</body>
+</html>

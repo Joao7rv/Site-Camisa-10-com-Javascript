@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pagamento - Loja Camisa 10</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <figure>
+      <a href="index.html">
+        <img src="midias/logo.png" width="100px" alt="Logo Loja Camisa 10">
+      </a>
+    </figure>
+    <h1>Loja Camisa 10</h1>
+  </header>
+
+  <main class="pagamento-container">
+    <h2>Finalizar Pagamento</h2>
+
+    <section id="resumoCarrinho">
+    <h3>Resumo do Pedido:</h3>
+
+    </section>
+
+    <p>Escolha a forma de pagamento:</p>
+
+    <form id="formPagamento">
+      <div class="metodos-pagamento">
+
+        <label>
+          <input type="radio" name="pagamento" value="Visa" required>
+          <img src="midias/visa.png" alt="Visa" width="50"> Cartão Visa
+        </label>
+
+        <label>
+          <input type="radio" name="pagamento" value="MasterCard">
+          <img src="midias/Mastercard.png" alt="MasterCard" width="50"> Cartão MasterCard
+        </label>
+
+        <label>
+          <input type="radio" name="pagamento" value="Pix">
+          <img src="midias/pix.webp" alt="Pix" width="50"> Pix
+        </label>
+
+        <label>
+          <input type="radio" name="pagamento" value="Boleto">
+          <img src="midias/boleto.png" alt="Boleto" width="50"> Boleto Bancário
+        </label>
+
+    </div>
+    <div class="container-botao">
+      <button type="submit" class="btn-finalizar-compra">Confirmar Pagamento</button>
+    </form>
+    </div>
+    <section id="enderecosEntrega">
+  <h3>Endereços de Entrega</h3>
+
+  <form id="formEndereco">
+    <input type="text" id="rua" placeholder="Rua" required>
+    <input type="text" id="numero" placeholder="Número" required>
+    <input type="text" id="bairro" placeholder="Bairro" required>
+    <input type="text" id="cidade" placeholder="Cidade" required>
+    <input type="text" id="estado" placeholder="Estado" required>
+    <input type="text" id="cep" placeholder="CEP" required>
+    <button type="submit">Adicionar Endereço</button>
+  </form>
+
+  <div id="listaEnderecos"></div>
+</section>
+
+  </main>
+
+  <footer class="footerpagamento" id="Contato">
+          <section class="pagamento">
+        
+          
+          <div class="botao-faq-footer">
+                <a href="page_FAQ.html">❓ Dúvidas Frequentes (FAQ)</a>
+          </div>
+
+          <article>
+            <p><b>LOJACAMISA10</b><br> 
+              <br>
+              Desde 2025 atendendo todo o Brasil com confiança e produtos de qualidade.<br>
+              <br>
+              Endereço: Rua Visc. de Taunay, Bairro Centro, Joinville - SC CEP 89201-908</p>
+          </article>
+        </footer>
+
+        <script src="pagamento.js"></script>
+
+
+
+
+</body>
+</html>
